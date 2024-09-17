@@ -1,3 +1,9 @@
+import { CameraButton } from '@/components/buttons/CameraButton';
+
 export default function Home() {
-  return <div>aaa</div>;
+  return (
+    <div>
+      <CameraButton />
+    </div>
+  );
 }
