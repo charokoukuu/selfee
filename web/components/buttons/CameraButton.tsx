@@ -1,4 +1,4 @@
-import { Box, Button, Center, VStack } from '@chakra-ui/react';
+import { Box, Button, VStack } from '@chakra-ui/react';
 import CameraIcon from '../icons/CmeraIcon';
 
 export const CameraButton = () => {
