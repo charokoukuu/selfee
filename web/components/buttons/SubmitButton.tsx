@@ -4,18 +4,21 @@ import { Box, Button, Skeleton } from '@chakra-ui/react';
 interface SubmitButtonProps {
   children: React.ReactNode;
   className?: string;
-  isDisable?: boolean; // isDisable propsを追加
+  isDisable?: boolean;
+  onClick?: () => void;
 }
 export const SubmitButton = ({
   children,
   className,
   isDisable = false,
+  onClick,
 }: SubmitButtonProps) => {
   return (
     <Box className={`w-full p-3 ${className}`}>
       <Button
         type="submit"
-        isDisabled={isDisable} // ボタンを無効化
+        isDisabled={isDisable}
+        onClick={onClick}
         className={`h-12 w-full rounded-md ${
           isDisable
             ? 'cursor-not-allowed bg-gray-400' // 無効化時のスタイル
