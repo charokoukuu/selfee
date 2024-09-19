@@ -11,13 +11,13 @@ export const GalleryCard = (props: GalleryCardProps) => {
   const { name, image } = props;
   return (
     <Box className="flex flex-col items-center space-y-2">
-      <Box position="relative" height="200px" width="150px">
+      <Box position="relative" height="130PX" width="97.5px">
         <Image
           src={image}
           alt={name}
           layout="fill"
           objectFit="cover"
-          className="rounded-md"
+          className="rounded-lg"
         />
       </Box>
       <Box className="text-center text-sm font-bold text-white">{name}</Box>

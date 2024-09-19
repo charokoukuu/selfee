@@ -14,7 +14,7 @@ const Carousel = () => {
   ];
 
   return (
-    <div className="mx-auto max-w-screen-lg p-4">
+    <div className="mx-auto max-w-screen-lg p-1">
       {' '}
       {/* Added padding here */}
       <Swiper
@@ -28,11 +28,11 @@ const Carousel = () => {
         pagination={{
           clickable: true,
         }}
-        className="my-8"
+        className="mb-3"
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
-            <div className="relative h-48 p-4">
+            <div className="relative h-48">
               {' '}
               {/* Added padding here */}
               <Image

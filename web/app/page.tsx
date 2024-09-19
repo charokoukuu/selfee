@@ -11,7 +11,7 @@ export default function Home() {
         <CameraButton />
       </HStack>
       <SkeltonCard>
-        <Box className="flex flex-row space-x-4 overflow-x-auto p-3">
+        <Box className="scrollbar-none flex flex-row space-x-4 overflow-x-auto px-3 pt-3">
           {templates.map((template) => {
             return (
               <Box key={template.name} className="shrink-0">
@@ -25,7 +25,9 @@ export default function Home() {
           })}
         </Box>
       </SkeltonCard>
-      <Carousel />
+      <SkeltonCard>
+        <Carousel />
+      </SkeltonCard>
     </Box>
   );
 }
