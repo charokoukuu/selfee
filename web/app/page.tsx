@@ -1,9 +1,10 @@
 import { CameraButton } from '@/components/buttons/CameraButton';
+import { SubmitButton } from '@/components/buttons/SubmitButton';
 import { SkeltonCard } from '@/components/cards/SkeltonCard';
 import Carousel from '@/components/gallery/Carousel';
 import { GalleryCard } from '@/components/gallery/GalleryCard';
 import { templates } from '@/options/template';
-import { Box, HStack } from '@chakra-ui/react';
+import { Box, Button, HStack } from '@chakra-ui/react';
 export default function Home() {
   return (
     <Box>
@@ -28,6 +29,9 @@ export default function Home() {
       <SkeltonCard>
         <Carousel />
       </SkeltonCard>
+      <SubmitButton isDisable={false} className="font-bold">
+        Let’s Generate !
+      </SubmitButton>
     </Box>
   );
 }
