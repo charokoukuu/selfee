@@ -4,7 +4,7 @@ import { SkeltonCard } from '@/components/cards/SkeltonCard';
 import Carousel from '@/components/gallery/Carousel';
 import { GalleryCard } from '@/components/gallery/GalleryCard';
 import { templates } from '@/options/template';
-import { Box, Button, HStack } from '@chakra-ui/react';
+import { Box, HStack } from '@chakra-ui/react';
 export default function Home() {
   return (
     <Box>
@@ -12,7 +12,7 @@ export default function Home() {
         <CameraButton />
       </HStack>
       <SkeltonCard>
-        <Box className="scrollbar-none flex flex-row space-x-4 overflow-x-auto px-3 pt-3">
+        <Box className="flex flex-row space-x-4 overflow-x-auto px-3 pt-3 scrollbar-none">
           {templates.map((template) => {
             return (
               <Box key={template.name} className="shrink-0">

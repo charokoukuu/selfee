@@ -44,7 +44,7 @@ export const background: templateTypes[] = [
     },
     {
         name: "Template 2",
-        prompt: "Prompt 2",
+        prompt: "a man of img Portrait photo in front of a beautiful background, softly blurred, vibrant colors, natural lighting, head and shoulders in frame, serene and confident expression",
         image: "image2.jpg"
     },
     {

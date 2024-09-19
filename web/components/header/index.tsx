@@ -1,4 +1,4 @@
-import { Box, ChakraProvider } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 
 export const Header = () => {
   return (
