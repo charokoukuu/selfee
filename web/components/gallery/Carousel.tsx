@@ -3,9 +3,13 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css'; // Core swiper styles
 import 'swiper/css/pagination'; // Pagination module styles
+import { Pagination } from 'swiper/modules'; // Use pagination from Swiper modules
 import Image from 'next/image';
+import { useState } from 'react';
+import Indicator from './Indicator'; // Your custom Indicator component
 
 const Carousel = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
   const images = [
     'https://blog.ja.playstation.com/tachyon/sites/7/2021/07/a3d299e7a2841e06dcb6771ade6f25a3b4973985.jpg?fit=1024%2C675',
     'https://www.gamespark.jp/imgs/p/vfrvPUfFBDEEkDjVvIkR5MMLlgcGBQQDAgEA/881764.jpg',
@@ -14,9 +18,7 @@ const Carousel = () => {
   ];
 
   return (
-    <div className="mx-auto max-w-screen-lg p-1">
-      {' '}
-      {/* Added padding here */}
+    <div className="mx-auto max-w-screen-lg">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -28,13 +30,13 @@ const Carousel = () => {
         pagination={{
           clickable: true,
         }}
-        className="mb-3"
+        onSlideChangeTransitionEnd={(swiper) =>
+          setActiveIndex(swiper.realIndex)
+        } // Updated to use `realIndex`
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
             <div className="relative h-48">
-              {' '}
-              {/* Added padding here */}
               <Image
                 src={image}
                 alt={`Slide ${index}`}
@@ -46,6 +48,7 @@ const Carousel = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <Indicator activeIndex={activeIndex} totalSlides={images.length} />
     </div>
   );
 };

@@ -1,5 +1,5 @@
 'use client';
-import { Box, Button, Skeleton } from '@chakra-ui/react';
+import { Box, Button } from '@chakra-ui/react';
 
 interface SubmitButtonProps {
   children: React.ReactNode;
@@ -27,9 +27,6 @@ export const SubmitButton = ({
       >
         {children}
       </Button>
-      <Skeleton className="rounded-lg">
-        <div className="bg-default-300 h-24 rounded-lg">a</div>
-      </Skeleton>
     </Box>
   );
 };
