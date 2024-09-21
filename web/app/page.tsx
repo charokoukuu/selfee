@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/classnames-order */
 /* eslint-disable @next/next/no-img-element */
 'use client';
 import generateAndSwapImages from '@/api/generateImage';
@@ -8,7 +9,7 @@ import { SkeltonCard } from '@/components/cards/SkeltonCard';
 import Carousel from '@/components/gallery/Carousel';
 import { GalleryCard } from '@/components/gallery/GalleryCard';
 import Skeleton from '@/components/loading/Skelton';
-import { templates } from '@/options/template';
+import { backgroundTypes, templates } from '@/options/template';
 import { Box, HStack, VStack } from '@chakra-ui/react';
 import { useRef, useState } from 'react';
 
@@ -17,8 +18,8 @@ export default function Home() {
   const [generatedImage, setGeneratedImage] = useState<string | null>(null); // プレビュー用
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
+  const [prompt, setPrompt] = useState<string>('');
   const bottomRef = useRef<HTMLDivElement | null>(null);
-  // 画像を生成し、プレビューとダウンロードリンクをセット
 
   const handleScroll = () => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -36,9 +37,6 @@ export default function Home() {
         /^data:image\/[a-z]+;base64,/,
         '',
       );
-
-      const prompt =
-        'a man of img Portrait photo in front of a beautiful background, softly blurred, vibrant colors, natural lighting, head and shoulders in frame, serene and confident expression';
 
       setIsProcessing(true); // 処理中
       // 画像生成および交換処理
@@ -86,7 +84,7 @@ export default function Home() {
   };
 
   const [selectTemplate, setSelectTemplate] = useState<string>('');
-  const [isOption, setIsOption] = useState<boolean>(false);
+  const [background, setBackground] = useState<backgroundTypes[]>([]);
   return (
     <Box>
       <HStack justify="center" className="m-10 mt-14">
@@ -109,7 +107,8 @@ export default function Home() {
                   }
                   onClick={() => {
                     setSelectTemplate(template.prompt);
-                    setIsOption(template.isOption ?? false);
+                    setPrompt(template.prompt);
+                    setBackground(template.background ?? []);
                   }}
                 />
               </Box>
@@ -119,15 +118,16 @@ export default function Home() {
       </SkeltonCard>
       <div className="relative">
         <div
+          // eslint-disable-next-line tailwindcss/migration-from-tailwind-2
           className={`transform transition-transform duration-500 ease-in-out ${
-            isOption
+            background
               ? 'translate-x-0 opacity-100'
               : 'translate-x-full opacity-0'
           }`}
         >
-          {isOption && (
+          {background.length > 0 && (
             <SkeltonCard>
-              <Carousel />
+              <Carousel background={background} onSetPrompt={setPrompt} />
             </SkeltonCard>
           )}
         </div>
