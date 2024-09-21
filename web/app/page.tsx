@@ -2,11 +2,11 @@
 'use client';
 import generateAndSwapImages from '@/api/generateImage';
 import { CameraButton } from '@/components/buttons/CameraButton';
+import { DownloadButton } from '@/components/buttons/DownloadButton';
 import { SubmitButton } from '@/components/buttons/SubmitButton';
 import { SkeltonCard } from '@/components/cards/SkeltonCard';
 import Carousel from '@/components/gallery/Carousel';
 import { GalleryCard } from '@/components/gallery/GalleryCard';
-import Indicator from '@/components/gallery/Indicator';
 import Skeleton from '@/components/loading/Skelton';
 import { templates } from '@/options/template';
 import { Box, HStack, VStack } from '@chakra-ui/react';
@@ -155,13 +155,15 @@ export default function Home() {
           />
         </VStack>
       )}
+      {downloadUrl && (
+        <DownloadButton
+          downloadUrl={downloadUrl ?? ''}
+          fileName={'swapped_image.png'}
+        >
+          Save Image
+        </DownloadButton>
+      )}
 
-      {/* ダウンロードリンクを表示 */}
-      {/* {downloadUrl && (
-        <a href={downloadUrl} download="swapped_image.png">
-          Download Swapped Image
-        </a>
-      )} */}
       <Box className="h-12" ref={bottomRef} />
     </Box>
   );
