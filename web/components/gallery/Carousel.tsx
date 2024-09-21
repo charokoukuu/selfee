@@ -32,7 +32,6 @@ const Carousel = (props: CarouselProps) => {
           setActiveIndex(swiper.realIndex);
           props.onSetPrompt(props.background[swiper.realIndex].prompt);
         }} // Updated to use `realIndex`
-        className="relative h-48"
       >
         {props.background.map((image, index) => (
           <SwiperSlide key={index}>

@@ -116,13 +116,12 @@ export default function Home() {
           })}
         </Box>
       </SkeltonCard>
-      <div className="relative">
+      <div>
         <div
-          // eslint-disable-next-line tailwindcss/migration-from-tailwind-2
-          className={`transform transition-transform duration-500 ease-in-out ${
-            background
-              ? 'translate-x-0 opacity-100'
-              : 'translate-x-full opacity-0'
+          className={`transition-max-height overflow-hidden duration-500 ease-in-out ${
+            background.length > 0
+              ? 'max-h-[500px] opacity-100'
+              : 'max-h-0 opacity-0'
           }`}
         >
           {background.length > 0 && (
