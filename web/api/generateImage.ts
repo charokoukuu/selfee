@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 const generateAndSwapImages = async (imageBase64: string, prompt: string) => {
     // 画像生成APIにリクエストを送る関数
     const generateImage = async (encodedImage: string): Promise<string> => {
