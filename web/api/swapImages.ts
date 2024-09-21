@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import base64 from 'base64-js';
 
 const swapImages = async (image1Path: string, image2Path: string) => {
