@@ -32,6 +32,7 @@ const Carousel = (props: CarouselProps) => {
           setActiveIndex(swiper.realIndex);
           props.onSetPrompt(props.background[swiper.realIndex].prompt);
         }} // Updated to use `realIndex`
+        className="relative h-48"
       >
         {props.background.map((image, index) => (
           <SwiperSlide key={index}>
@@ -46,11 +47,11 @@ const Carousel = (props: CarouselProps) => {
             </div>
           </SwiperSlide>
         ))}
+        <Indicator
+          activeIndex={activeIndex}
+          totalSlides={props.background.length}
+        />
       </Swiper>
-      <Indicator
-        activeIndex={activeIndex}
-        totalSlides={props.background.length}
-      />
     </div>
   );
 };

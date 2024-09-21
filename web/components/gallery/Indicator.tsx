@@ -6,7 +6,7 @@ type IndicatorProps = {
 
 const Indicator: React.FC<IndicatorProps> = ({ activeIndex, totalSlides }) => {
   return (
-    <div className="mt-3 flex justify-center space-x-2">
+    <div className="absolute bottom-2 left-1/2 z-50 mt-3 flex -translate-x-1/2 -translate-y-1/2 justify-center space-x-2">
       {Array.from({ length: totalSlides }).map((_, index) => (
         <span
           key={index}
