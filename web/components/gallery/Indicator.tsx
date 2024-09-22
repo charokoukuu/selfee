@@ -1,3 +1,4 @@
+'use client';
 // components/Indicator.tsx
 type IndicatorProps = {
   activeIndex: number;
