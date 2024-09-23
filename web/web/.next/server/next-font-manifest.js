@@ -1,1 +1,1 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/charo/selfee/web/app/layout\":[\"static/media/cd248fd68a9e226f-s.p.woff2\",\"static/media/cd248fd68a9e226f-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/ys/selfee/web/app/layout\":[\"static/media/cd248fd68a9e226f-s.p.woff2\",\"static/media/cd248fd68a9e226f-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
