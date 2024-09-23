@@ -15,7 +15,7 @@ export type backgroundTypes = {
 export const background: backgroundTypes[] = [
     {
         name: "uminienko",
-        prompt: "Prompt 1",
+        prompt: "A portrait img of a man in front of the Uyuni Salt Flats is dreamlike landscape featuring a vast reflective salt flat, with a sky full of fluffy clouds and their silhouettes reflecting perfectly on the surface of the salt flat, with a softly blurred background, vibrant colors, natural lighting, and a serene, confident expression",
         image: "https://a-tabito.jp/wp-content/uploads/2018/02/DSC_0203-1200x630.jpg"
     },
     {
