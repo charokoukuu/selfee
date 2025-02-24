@@ -8,9 +8,17 @@ const IslandMoments = Island_Moments({
 });
 export const Header = () => {
   return (
-    <Box className="flex h-12 w-full items-center bg-black/30 text-white">
-      <Box className={`flex pl-5 text-2xl ${IslandMoments.className}`}>
-        Selfee
+    <Box className="flex h-12 w-full items-center bg-black text-white">
+      <Box
+        className={`flex pl-5 text-2xl ${IslandMoments.className}`}
+        style={{
+          fontWeight: 'bold',
+          backgroundImage: 'linear-gradient(90deg, #FFBB00, #522C00)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+        }}
+      >
+        4maru Generator
       </Box>
     </Box>
   );

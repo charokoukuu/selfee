@@ -10,8 +10,16 @@ const IslandMoments = Island_Moments({
 
 export const Footer = () => {
   return (
-    <Box className="fixed bottom-0 left-0 flex h-12 w-full items-center justify-center bg-black/30 text-sm text-white">
-      <Box className={`flex text-center text-2xl ${IslandMoments.className}`}>
+    <Box className="fixed bottom-0 left-0 flex h-12 w-full items-center justify-center bg-black text-sm text-white">
+      <Box
+        className={`flex text-center text-2xl ${IslandMoments.className}`}
+        style={{
+          fontWeight: 'bold',
+          backgroundImage: 'linear-gradient(90deg, #FFBB00, #522C00)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+        }}
+      >
         @Beaver's Hive
       </Box>
     </Box>
