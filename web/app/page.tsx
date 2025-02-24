@@ -87,12 +87,17 @@ export default function Home() {
   const [background, setBackground] = useState<backgroundTypes[]>([]);
   return (
     <Box>
-      <HStack justify="center" className="m-10 mt-14">
-        <CameraButton
-          selectedImage={selectedImage}
-          setSelectedImage={setSelectedImage}
-        />
-      </HStack>
+      <div
+        className="w-full bg-cover bg-center"
+        style={{ backgroundImage: `url('leather.png')` }}
+      >
+        <HStack justify="center" className="p-10">
+          <CameraButton
+            selectedImage={selectedImage}
+            setSelectedImage={setSelectedImage}
+          />
+        </HStack>
+      </div>
       <SkeltonCard>
         <Box className="flex flex-row space-x-4 overflow-x-auto px-3 pt-3 scrollbar-none">
           {templates.map((template) => {
@@ -144,26 +149,31 @@ export default function Home() {
         Let’s Generate !
       </SubmitButton>
       {/* プレビューを表示 */}
-      {isProcessing && <Skeleton />}
-      {generatedImage && (
-        <VStack>
-          <img
-            className="m-7 size-[80vw] rounded-lg border-2 bg-white/20 shadow-[3px_2px_18.9px_0px_rgba(0,81,255,0.25)] transition-all duration-150 ease-in-out hover:translate-y-1 active:translate-y-2 active:shadow-[1px_1px_10px_0px_rgba(0,81,255,0.25)]"
-            src={generatedImage}
-            alt="Generated Preview"
-          />
-        </VStack>
-      )}
-      {downloadUrl && (
-        <DownloadButton
-          downloadUrl={downloadUrl ?? ''}
-          fileName={'swapped_image.png'}
-        >
-          Save Image
-        </DownloadButton>
-      )}
+      <div
+        className="min-h-[300px] w-full bg-cover bg-center"
+        style={{ backgroundImage: `url('leather.png')` }}
+      >
+        {isProcessing && <Skeleton />}
+        {generatedImage && (
+          <VStack>
+            <img
+              className="m-7 size-[80vw] rounded-lg border-2 bg-white/20 shadow-[3px_2px_18.9px_0px_rgba(0,81,255,0.25)] transition-all duration-150 ease-in-out hover:translate-y-1 active:translate-y-2 active:shadow-[1px_1px_10px_0px_rgba(0,81,255,0.25)]"
+              src={generatedImage}
+              alt="Generated Preview"
+            />
+          </VStack>
+        )}
+        {downloadUrl && (
+          <DownloadButton
+            downloadUrl={downloadUrl ?? ''}
+            fileName={'swapped_image.png'}
+          >
+            Save Image
+          </DownloadButton>
+        )}
 
-      <Box className="h-12" ref={bottomRef} />
+        <Box className="h-12" ref={bottomRef} />
+      </div>
     </Box>
   );
 }
