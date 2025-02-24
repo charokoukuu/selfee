@@ -39,7 +39,7 @@ export const background: backgroundTypes[] = [
 export const templates: templateTypes[] = [
     {
         name: "Official Image",
-        prompt: "A portrait photo of a person, dressed in a black business suit, against a plain white background. The image is well-lit with natural lighting, capturing a formal and serious expression. The format is similar to an ID photo, with the head and shoulders in the frame, emphasizing a clean, professional appearance.",
+        prompt: "A portrait photo img of a person, dressed in a black business suit, against a plain white background. The image is well-lit with natural lighting, capturing a formal and serious expression. The format is similar to an ID photo, with the head and shoulders in the frame, emphasizing a clean, professional appearance.",
         image: "https://studioindi.jp/wp-content/uploads/2024/05/ba-box-retouchflow-after2-m1.jpg"
     },
     {
