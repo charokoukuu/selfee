@@ -61,13 +61,13 @@ const generateAndSwapImages = async (imageBase64: string, prompt: string) => {
 
     // 2. 生成された画像と元画像を使って画像交換APIを叩く
     console.log('Swapping images...');
-    // const swappedImageBase64 = await swapImages(
-    //   imageBase64.replace(/^data:image\/[a-z]+;base64,/, ''),
-    //   generatedImageBase64.replace(/^data:image\/[a-z]+;base64,/, ''),
-    // );
+    const swappedImageBase64 = await swapImages(
+      imageBase64.replace(/^data:image\/[a-z]+;base64,/, ''),
+      generatedImageBase64.replace(/^data:image\/[a-z]+;base64,/, ''),
+    );
 
     // 3. 最終的な交換後の画像のBase64データを返す
-    return generatedImageBase64;
+    return swappedImageBase64;
   } catch (error) {
     console.error('Error:', error);
     throw error;
